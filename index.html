@@ -59,11 +59,26 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+    if(prediction[0].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="1YEN"
+    }else if(prediction[1].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="5YEN"
+    }else if(prediction[2].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="10YEN"
+    }else if(prediction[3].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="50YEN"
+    }else if(prediction[4].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="100YEN"
+    }else if(prediction[5].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="500YEN"
+    }else if(prediction[6].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="1000YEN"
+    }else if(prediction[7].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="5000YEN"
+    }else if(prediction[8].probability.toFixed(2)>0.8{
+       labelContainer.childNodes[0].innerHTML="10000YEN"
+    }else{
+       labelContainer.childNodes[0].innerHTML="unknown"
     }
 </script>
 
